@@ -1,5 +1,5 @@
 <script>
-  import Component from "./Component.svelte";
+  let open = $state(false);
 </script>
 
-<Component />
+<div prop="a {open ? 'b' : 'c'}"></div>
