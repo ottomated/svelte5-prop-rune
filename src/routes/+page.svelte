@@ -1,5 +1,8 @@
-<script>
-  let open = $state(false);
+<script lang="ts">
+	import Comp from './Comp.svelte';
+
+	const a = 1;
 </script>
 
-<div prop="a {open ? 'b' : 'c'}"></div>
+Hello World
+<Comp title="Hello" subtitle="World" class="foo" />
