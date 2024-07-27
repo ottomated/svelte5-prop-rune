@@ -1,13 +1,6 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	// const {
-	//   title,
-	//   subtitle,
-	// }: {
-	//   title: string;
-	//   subtitle: string;
-	// } = $props();
 	const bindable1: string = $prop.bindable();
 	const title: string = $prop('test');
 	const typeError: string = $prop(1);
@@ -16,6 +9,8 @@
 	const bound2: string = $prop.bindable('fallback').as('bounded');
 	const class_: string = $prop().as('class');
 	const rest: HTMLButtonAttributes = $prop.rest();
+
+	// Compiles to:
 
 	// const {
 	// 	bindable1 = $bindable(),
@@ -39,3 +34,4 @@
 
 <h1 class={class_}>{title}</h1>
 <h2>{subtitle}</h2>
+<button {...rest}>button</button>
